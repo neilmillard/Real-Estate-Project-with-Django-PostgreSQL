@@ -1,4 +1,4 @@
-## Key Value Pair (Dictionary)
+# Key Value Pair (Dictionary)
 bedroom_choices = {
   '1': 1,
   '2': 2,

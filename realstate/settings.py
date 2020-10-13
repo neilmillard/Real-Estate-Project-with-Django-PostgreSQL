@@ -40,9 +40,9 @@ INSTALLED_APPS = [
     'pages.apps.PagesConfig',    # pages app
     'listings.apps.ListingsConfig',  # listings app
     'realtors.apps.RealtorsConfig',  # realtors app
-    'django.contrib.humanize',     ## It will allow us to use human eyes( we can use comma etc by using this)
-    'accounts.apps.AccountsConfig',  ## accounts app
-    'contacts.apps.ContactsConfig',  ## contacts app
+    'django.contrib.humanize',     # It will allow us to use human eyes( we can use comma etc by using this)
+    'accounts.apps.AccountsConfig',  # accounts app
+    'contacts.apps.ContactsConfig',  # contacts app
 ]
 
 MIDDLEWARE = [
@@ -79,14 +79,21 @@ WSGI_APPLICATION = 'realstate.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'realestatedb',
+#         'USER': os.environ.get('DB_USER'),
+#         'PASSWORD': os.environ.get('DB_PASS'),
+#         'HOST': 'localhost',
+#         # 'PORT': '5432',
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'realestatedb',
-        'USER': os.environ.get('DB_USER'),
-        'PASSWORD': os.environ.get('DB_PASS'),
-        'HOST': 'localhost',
-        # 'PORT': '5432',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR + '/db.sqlite3',
     }
 }
 
@@ -130,24 +137,24 @@ USE_TZ = True
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'realstate/static')   ## location/address of the static folder
+    os.path.join(BASE_DIR, 'realstate/static')   # location/address of the static folder
 ]
-## after this apply on gitbash - python manage.py collectstatic, it will create the static folder in root directory
+# after this apply on gitbash - python manage.py collectstatic, it will create the static folder in root directory
 
 
 # Media Folder Settings
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
-### Message Alerts (After submit reg/login etc form, it will show a message) Start ###
+# Message Alerts (After submit reg/login etc form, it will show a message) Start ###
 from django.contrib.messages import constants as messages
 MESSAGE_TAGS = {
-    messages.ERROR: 'danger'  ## danger from Bootstrap
+    messages.ERROR: 'danger'  # danger from Bootstrap
 }
-### Message Alerts (After submit reg/login etc form, it will show a message) End ###
+# Message Alerts (After submit reg/login etc form, it will show a message) End ###
 
 
-## Email Config
+# Email Config
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_HOST_USER = os.environ.get('EMAIL_USER')  # Access From Environment Variables

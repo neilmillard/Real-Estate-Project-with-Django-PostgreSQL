@@ -1,7 +1,8 @@
 from django.db import models
 from datetime import datetime
-from realtors.models import Realtor  ## For ForeignKey
+from realtors.models import Realtor  # For ForeignKey
 # Create your models here.
+
 
 class Listing(models.Model):
     realtor = models.ForeignKey(Realtor, on_delete=models.DO_NOTHING)
@@ -18,7 +19,7 @@ class Listing(models.Model):
     sqft = models.IntegerField()
     lot_size = models.DecimalField(max_digits=5, decimal_places=1)
     photo_main = models.ImageField(upload_to='photos/%Y/%m/%d/')
-    photo_1 = models.ImageField(upload_to='photos/%Y/%m/%d/', blank=True)   ## blank=True used to make this field optional
+    photo_1 = models.ImageField(upload_to='photos/%Y/%m/%d/', blank=True)  # blank=True used to make this field optional
     photo_2 = models.ImageField(upload_to='photos/%Y/%m/%d/', blank=True)
     photo_3 = models.ImageField(upload_to='photos/%Y/%m/%d/', blank=True)
     photo_4 = models.ImageField(upload_to='photos/%Y/%m/%d/', blank=True)

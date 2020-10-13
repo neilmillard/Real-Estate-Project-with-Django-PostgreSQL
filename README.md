@@ -12,13 +12,13 @@
 -->
 
 # Tools
-## Front-end Part
+# Front-end Part
 * HTML
 * CSS
 * Bootstrap
 * JavaScript
 * JQuery
-## Back-end
+# Back-end
 * Django
 * SQLite 3
 
@@ -35,4 +35,4 @@
 
 **Copyright ©** 2020-3020 Md. Omar Faruk
 
-## Go Through This Site Then You Will Know About This Site Properly.
+# Go Through This Site Then You Will Know About This Site Properly.
